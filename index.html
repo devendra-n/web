@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/script.js"></script>
+    <script src="js/connect.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="background">
+        <div class="logo_wrapper" id="logo_wrapper">
+        <img src="./images/static/logo.png" alt="Logo" >
+    </div>
+    <div class="sign_wrapper" id="sign_wrapper">
+        <form action="Handlers/login.php" method="post" id="frm">
+            
+            <input type="text" name="username" id="username"placeholder="Enter Username"/><br/>
+          
+            <input type="password" name="passwd" id="passwd"placeholder="Enter Password"/><br/>
+            <button type="submit">Login <i class="fa fa-lock"></i></button>
+        </form>
+    </div>
+    </div>
+    <i id="fl" class="fa fa-lock"></i>
+ <nav>
+   <h2 id="logo"><span>LionBet</span></h2>
+
+
+    <h1 id="toggle"><i class="fa fa-bars" id="tgl"></i></h1>
+    <ul>
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-info"></i> About us</a></li>
+        <li><a href="#"><i class="fa fa-envelope"></i> Contact us</a></li>
+       
+
+    </ul>
+ </nav>
+ <div class="sidebar" id="side">
+    <ul>
+        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fa fa-info"></i> About us</a></li>
+        <li><a href="#"><i class="fa fa-envelope"></i> Contact us</a></li>
+
+    </ul>
+ </div>
+</body>
+</html>

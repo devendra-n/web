@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", serif;
+   
+}
+body{
+    min-height: 100vh;
+    
+}
+nav{
+    height: 40px;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    z-index: 34;
+    justify-content: space-between;
+   background: rgba(0, 0, 0, 0.149);
+  
+}
+#back{
+    position: fixed;
+    left: 30%;
+    object-fit: contain;
+    width: 45%;
+    top: 50px;
+    overflow: hidden;
+}
+
+nav ul{
+    display: flex;
+    position: relative;
+    height: 100%;
+    
+    max-width: fit-content;
+
+}
+#toggle{
+    display: none;
+}
+
+
+
+
+
+
+nav ul li{
+    list-style: none;
+    line-height: 40px;
+}
+nav ul li a{
+    text-decoration: none;
+    padding: 10px 15px;
+    color: #fffff3;
+    font-size: 12px;
+    transition: all .4s ease-in;
+}
+nav ul li a:hover{
+    color: #EE66A6;
+}
+nav h2{
+    line-height: 40px;
+    margin-left: 12px;
+    background:linear-gradient(#d4cfcf,#999);
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    user-select: none;
+
+    cursor: pointer;
+}
+.background{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+}
+.logo_wrapper{
+    position: relative;
+    width: 100%;
+    display: grid;
+    transition: all .5s ease-in-out;
+    place-items: center;
+    background: radial-gradient(circle, rgba(153,153,153,1) 0%, rgba(17,17,17,1) 100%);
+
+}
+.logo_wrapper img{
+    position: relative;
+    width: 90%;
+    max-height: 90vh !important;
+    object-fit: contain !important;
+}
+.sign_wrapper{
+    background: radial-gradient(circle, rgba(153,153,153,1) 0%, rgba(17,17,17,1) 100%);
+    position: relative;
+    height: 100%;
+    display: grid;
+    transition: all .5s ease-in-out;
+    place-items: center;
+    padding-top: 40px;
+    width: 0%;
+}
+.sidebar{
+    height:100vh;
+    width: 320px;
+    position: fixed;
+    z-index: 25;
+    left: -320px;
+    display: none;
+    transition: all .3s ease-in-out;
+    padding-top: 60px;
+    background: #D91656;
+}
+
+
+.sidebar ul{
+    display: flex;
+    flex-direction: column;
+}
+.sidebar ul li{
+    list-style: none;
+    padding: 10px 20px;
+    transition: all .4s ease;
+}
+.sidebar ul li:hover{
+   
+    padding: 10px 30px;
+}
+.sidebar ul li a{
+    text-decoration: none;
+    color: #fffff3;
+    
+}
+
+#frm{
+    height: 180px;
+    width: 320px;
+    background-color:#111;
+    color: #999;
+    padding: 10px 15px;
+    display: flex;
+
+    padding-top: 25px;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset -5px 5px 12px 5px #fff ,5px 5px 10px 3px #000;
+    border-radius: 20px;
+
+}
+#frm input{
+    border: 1px double #999;
+    background: transparent;
+    outline: none;
+    padding: 7px 12px;
+    color: #999;
+    margin-top: 8px;
+   
+    border-radius: 18px;
+
+}
+#frm button{
+    padding: 8px 15px;
+    color: #999;
+    border:1px double #999;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#frm button:hover{
+    color: #111;
+    background-color: #999;
+}
+
+
+.hide{
+   left: 0; 
+}
+@media  only screen and (max-width:600px) {
+    nav ul{
+        display:none;
+    }
+    #side{
+        display: block;
+    }
+    #toggle{
+        display: block;
+    }
+}
+#fl{
+    position: fixed;
+    font-size: 28px;
+    top: calc(50% - 14px);
+    z-index: 123;
+    color: #111;
+    right: 20px;
+    cursor: pointer;
+    text-shadow: 1px 1px 4px #fff;
+    transition:  all .4s ease;
+}
+#fl:hover::after{
+    content: "Login";
+    font-size: 16px;
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    font-family: 'Courier New', Courier, monospace;
+}

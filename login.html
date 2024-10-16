@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #111;
+        }
+        .main_wrapper{
+            height: 480px;
+            width: 360px;
+            
+            border-radius: 15px;
+            display: grid;
+            place-items: center;
+        }
+        .login_wrapper,.registration_wrapper{
+            position: absolute;
+            height: 480px;
+            width: 360px;
+            transform: rotate(15deg);
+            background-color: aliceblue;
+        }
+        .login_wrapper{
+            z-index: 23;
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main_wrapper">
+        <div class="login_wrapper">
+            <form action="#" method="post">
+                <label for="username">Username</label>
+                
+            </form>
+        </div>
+        <div class="registration_wrapper">
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
