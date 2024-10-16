@@ -234,7 +234,34 @@ nav h2{
     left: -50%;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .out{
     border: none !important;
     font-size: 22px !important;
+}
+#otp{
+    display: none;
+}
+#pop{
+    position: fixed;
+    padding: 20px 25px;
+    right: -100%;
+    display: grid;
+    place-items: center;
+    background-color: red;
+    color: #999;
+    border-radius: 12px;
+    animation: fade 3s ease-in-out;
+}
+@keyframes fade{
+    30%{
+        right:20px;
+    }
+    70%{
+        right:20px;
+    }
+    
+    100%{
+        right: -100%;
+    }
 }

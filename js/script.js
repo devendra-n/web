@@ -31,8 +31,21 @@ function switch_to(e,to){
        
     }
 }
+function res(){
+let fname=document.getElementById('fname')
+let lname=document.getElementById('lname')
+
+let email=document.getElementById('email')
+let phone=document.getElementById('phone')
+let email=document.getElementById('email')
+let email=document.getElementById('email')
 
 
+
+
+
+
+}
 
 
 

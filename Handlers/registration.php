@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                     print_r($e);
                 }
                 else{
-                  echo(json_encode(["message"=>"OTP Send","rdr"=>"get_otp"]));
+                  echo(json_encode(["message"=>"OTP Send  to ".$email,"rdr"=>"get_otp"]));
                 }
 
 

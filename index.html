@@ -18,14 +18,14 @@
         <img src="./images/static/logo.png" alt="Logo" >
     </div>
     <div class="sign_wrapper" id="sign_wrapper">
-        <form action="Handlers/login.php" method="post" id="frm" class="frm">
+        <form action="#" method="post" id="frm" class="frm">
             
             <input type="text" name="username" id="username"placeholder="Enter Username"/><br/>
           
             <input type="password" name="passwd" id="lpasswd"placeholder="Enter Password"/><br/>
             <span><button onclick="switch_to(event,'sign')">Sign Up <i class="fa fa-lock"></i></button><button type="submit">Login <i class="fa fa-lock"></i></button></span>
         </form>
-        <form action="Handlers/login.php" method="post" id="rfrm" class="frm">
+        <form action="#" method="post" id="rfrm" class="frm">
             
             <input type="text" name="fname" id="fname"placeholder="First Name" required/><br/>
             <input type="text" name="lname" id="lname"placeholder="Last Name" required/><br/>
@@ -36,6 +36,11 @@
             <input type="password" name="passwd" id="passwd"placeholder="Enter Password" required/><br/>
             <input type="password" name="cpasswd" id="cpasswd"placeholder="Confirm Password" required/><br/>
             <span><button class="out" onclick="switch_to(event,'login')"><i class="fa-solid fa-circle-chevron-left"></i></button><button type="submit">Submit <i class="fa fa-lock"></i></button></span>
+        </form>
+        <form action="Handlers/verifyotp.php" method="post" id="otp" class="frm">
+            
+            <input type="text" name="username" id="username"placeholder="Enter OTP "/><br/>
+            <span><button type="submit">Verify <i class="fa fa-lock"></i></button></span>
         </form>
         
     </div>
