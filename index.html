@@ -5,6 +5,7 @@
     <script src="js/script.js"></script>
     <script src="js/connect.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/da9c0972bd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -17,13 +18,26 @@
         <img src="./images/static/logo.png" alt="Logo" >
     </div>
     <div class="sign_wrapper" id="sign_wrapper">
-        <form action="Handlers/login.php" method="post" id="frm">
+        <form action="Handlers/login.php" method="post" id="frm" class="frm">
             
             <input type="text" name="username" id="username"placeholder="Enter Username"/><br/>
           
-            <input type="password" name="passwd" id="passwd"placeholder="Enter Password"/><br/>
-            <button type="submit">Login <i class="fa fa-lock"></i></button>
+            <input type="password" name="passwd" id="lpasswd"placeholder="Enter Password"/><br/>
+            <span><button onclick="switch_to(event,'sign')">Sign Up <i class="fa fa-lock"></i></button><button type="submit">Login <i class="fa fa-lock"></i></button></span>
         </form>
+        <form action="Handlers/login.php" method="post" id="rfrm" class="frm">
+            
+            <input type="text" name="fname" id="fname"placeholder="First Name" required/><br/>
+            <input type="text" name="lname" id="lname"placeholder="Last Name" required/><br/>
+            <input type="email" name="email" id="email"placeholder="Email" required/><br/>
+            <input type="tel" name="tel" id="tel"placeholder="Phone" required/><br/>
+            <input type="text" name="ref" id="ref"placeholder="Referal ID ( Optional )"/><br/>
+          
+            <input type="password" name="passwd" id="passwd"placeholder="Enter Password" required/><br/>
+            <input type="password" name="cpasswd" id="cpasswd"placeholder="Confirm Password" required/><br/>
+            <span><button class="out" onclick="switch_to(event,'login')"><i class="fa-solid fa-circle-chevron-left"></i></button><button type="submit">Submit <i class="fa fa-lock"></i></button></span>
+        </form>
+        
     </div>
     </div>
     <i id="fl" class="fa fa-lock"></i>

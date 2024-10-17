@@ -101,6 +101,14 @@ nav h2{
     place-items: center;
     padding-top: 40px;
     width: 0%;
+    overflow: hidden;
+}
+#reg{
+    color: transparent;
+    background: linear-gradient(#FFF,#999);
+    background-clip: text;
+    text-shadow: 0px 0px 10px #000;
+    cursor: pointer;
 }
 .sidebar{
     height:100vh;
@@ -134,22 +142,29 @@ nav h2{
     
 }
 
-#frm{
+.frm{
     height: 180px;
     width: 320px;
     background-color:#111;
     color: #999;
     padding: 10px 15px;
     display: flex;
-
+    transition: all .7s ease-in-out;
     padding-top: 25px;
     flex-direction: column;
     align-items: center;
     box-shadow: inset -5px 5px 12px 5px #fff ,5px 5px 10px 3px #000;
     border-radius: 20px;
+    position: absolute;
 
 }
-#frm input{
+#rfrm{
+    height: 400px;
+    display: none;
+   
+}
+
+.frm input{
     border: 1px double #999;
     background: transparent;
     outline: none;
@@ -160,7 +175,19 @@ nav h2{
     border-radius: 18px;
 
 }
-#frm button{
+#rfrm input{
+    margin-top: 0px;
+
+}
+
+.frm span{
+   
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.frm button{
     padding: 8px 15px;
     color: #999;
     border:1px double #999;
@@ -168,7 +195,7 @@ nav h2{
     border-radius: 8px;
     cursor: pointer;
 }
-#frm button:hover{
+.frm button:hover{
     color: #111;
     background-color: #999;
 }
@@ -206,4 +233,8 @@ nav h2{
     top: 100%;
     left: -50%;
     font-family: 'Courier New', Courier, monospace;
+}
+.out{
+    border: none !important;
+    font-size: 22px !important;
 }

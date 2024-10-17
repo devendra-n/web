@@ -1,11 +1,39 @@
 
 
+function switch_to(e,to){
+   e.preventDefault()
+    if (to=="login"){
+        let reg=document.getElementById('rfrm').style
+        reg.display="none"
+        //reg.transform='rotateY(90deg)'
+        document.getElementById('frm').style.display="flex"
+       /* setTimeout(() => {
+            reg.display="none"
+            
 
-function pl(e){
-    let uttr=new SpeechSynthesisUtterance("bcznmcvcxnbv")
-    console.log(speechSynthesis.getVoices()[0])
+            document.getElementById('frm').style.transform="rotateY(0deg)"
+        }, 1000);*/
+       
+    
+
+    }
+    else{
+       
+        let reg=document.getElementById('frm').style
+         reg.display="none"
+        //reg.transform='rotateY(90deg)'
+        document.getElementById('rfrm').style.display="flex"   
+        /*setTimeout(() => {
+           
+        
+            document.getElementById('rfrm').style.transform="rotateY(0deg)"
+        }, 1000);*/
+       
+    }
 }
-pl("Hello")
+
+
+
 
 
 
@@ -34,8 +62,6 @@ window.addEventListener('click',e=>{
     }
     
 })
-}, 300);
-
-
+}, 1000);
 
 
