@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             $uid="UID".random_int(1111,99999);
             $passwd=sha1($nd['passwd']);
             $walletid=bin2hex(random_bytes(10));
-            $myref=strtoupper(substr($fname,0,2)).substr($phone,4).random_int(111,999);
+            $myref=strtoupper(substr($fname,0,2)).substr($phone,6).random_int(111,999);
             $query="";
             if (isset($nd['snf'])) {
                 $snf=$dt->filter_r($nd['snf']);
