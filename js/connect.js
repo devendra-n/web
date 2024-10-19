@@ -22,10 +22,11 @@ const checkConnectivity=()=>{
 
 
 }
-int_id=setInterval(checkConnectivity,1000);
+/*int_id=setInterval(checkConnectivity,1000);
 console.log(int_id)
 window.addEventListener("contextmenu",e=>{
     
     
 
 })
+*/

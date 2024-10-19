@@ -31,22 +31,6 @@ function switch_to(e,to){
        
     }
 }
-function res(){
-let fname=document.getElementById('fname')
-let lname=document.getElementById('lname')
-
-let email=document.getElementById('email')
-let phone=document.getElementById('phone')
-let email=document.getElementById('email')
-let email=document.getElementById('email')
-
-
-
-
-
-
-}
-
 
 
 
@@ -75,6 +59,78 @@ window.addEventListener('click',e=>{
     }
     
 })
+
+document.getElementById('rfrm').addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let fname=document.getElementById('fname').value
+    let lname=document.getElementById('lname').value
+    
+    let email=document.getElementById('email').value
+    let phone=document.getElementById('tel').value
+    let ref=document.getElementById('ref').value
+    let passwd=document.getElementById('passwd').value
+    let cpasswd=document.getElementById('cpasswd').value
+    let data={
+        "fname":fname,
+        "lname":lname,
+        "email":email,
+        "ref":ref,
+        "phone":phone,
+        "passwd":passwd,
+        "cpasswd":cpasswd
+    }
+    fetch("/web/Handlers/registration.php",
+        {
+            method:"post",
+            headers:{"Content-type":"application/json"},
+            body:JSON.stringify(data)
+        }
+    ).then(e=>{
+        return e.json()
+    }).then(e=>{
+        if(e.rdr=="get_otp"){
+            document.getElementById('rfrm').style.display='none'
+            document.getElementById('otp').style.display='flex'
+            alert(e.message);
+            document.getElementById('otp').addEventListener('submit',(e)=>{
+                e.preventDefault();
+                let otp=document.getElementById('otp_field').value
+                let data={
+                    'otp':otp
+                }
+                fetch('/web/Handlers/otp.php',{
+                    method:'post',
+                    headers:{'Content-type':'application/json'},
+                    body:JSON.stringify(data)
+                }).then(e=>{
+                    return e.json()
+                }
+                ).then(
+                  e=>{
+                    if(e.rdr=='login'){
+                        document.getElementById('otp').style.display='none'
+                        document.getElementById('frm').style.display='flex'
+                        alert('Registration Success')
+                    }
+                    else{
+                        alert(e.message)
+                    }
+                  }
+                )
+
+
+            })
+        }
+        else{
+            alert(e.message)
+
+        }
+    })
+
+
+    })
+    
+
 }, 1000);
 
 

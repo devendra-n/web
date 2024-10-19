@@ -1,20 +1,18 @@
 <?php
-class filter{
-    public $db;
+include_once('filter.php');
 
-    function filter_r($data){
-        return mysqli_real_escape_string($this->db,$data);
-    }
-}
+function unique($email){
+    $query="SELECT * FROM `user_table` WHERE email='$email'";
+    include("db.php");
 
-function unique($con,$email){
-    $query="SELECT uid FROM user_table WHERE email='$email'";
     if ($res=mysqli_query($con,$query)) {
-        if (mysqli_num_rows($res)>0) {
-            return false;
+     
+        if (mysqli_num_rows($res)==0) {
+           return true;
         }
         else{
-            return true;
+            
+            return false;
         }
     }
 }
@@ -48,32 +46,24 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
                 $query = "INSERT INTO `user_table` (`id`, `first_name`, `last_name`, `uid`, `email`, `passwd`, `my_ref_id`, `wallet`, `tpin`, `senior_ref`, `profile`, `account_number`, `ifsc`, `bank_name`, `total_ref`, `forgen_key`, `two_fact`, `phone`, `wallet_id`, `value_point`) VALUES (NULL, '$fname', '$lname', '$uid', '$email', '$passwd', '$myref', '0', NULL, NULL, 'default_user.png', NULL, NULL, NULL, '0', NULL, '0', '$phone', '$walletid', '0')";
 
             }
-            if(unique($con,$email)){
+            $un=unique($email);
+            if($un){
                 
-                $data_array=http_build_query(array(
-                    "name"=>"devendra"
-                ));
-                $ch=curl_init();
-                curl_setopt($ch,CURLOPT_URL,$url);
-                curl_setopt($ch,CURLOPT_POST,true);
-                curl_setopt($ch,CURLOPT_POSTFIELDS,$dtr);
-                curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-                $res=curl_exec($ch);
-                if($e=curl_error($ch)){
+                if(false){
                     print_r($e);
                 }
                 else{
-                  echo(json_encode(["message"=>"OTP Send  to ".$email,"rdr"=>"get_otp"]));
+                  session_start();
+                  $_SESSION['otp']='1220';
+                  $_SESSION['con']=$con;
+                  $_SESSION['query']=$query;
+                  echo(json_encode(["message"=>"OTP Send  to ".$email." 1220","rdr"=>"get_otp"]));
                 }
 
 
-                if (mysqli_query($con,$query)) {
-                    echo(json_encode(["message"=>"Regisrtation success","rdr"=>"get_otp"]));
-    
-                }
         }
         else{
-            echo(json_encode(["message"=>"Email already Registered"]));
+            echo(json_encode(["message"=>"Email already Registered","rdr"=>"login"]));
 
         }
     }
